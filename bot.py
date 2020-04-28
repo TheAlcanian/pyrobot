@@ -19,6 +19,30 @@ import sys
 import pycurl
 from urlgrabber import urlopen
 
+# # # Error Handler # # #
+
+def my_exchandler(type, value, traceback):
+  if type == RuntimeError:
+    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
+    json.dump(amounts, currencyfile)
+    currencyfile.close()
+    exit(0)
+  if type == KeyboardInterrupt:
+    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
+    json.dump(amounts, currencyfile)
+    currencyfile.close()
+    exit(0)
+  if type == SystemExit:
+    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
+    json.dump(amounts, currencyfile)
+    currencyfile.close()
+    exit(0)
+  sys.__excepthook__(type, value, traceback)
+print("[SR] Loading error handler...")
+sys.excepthook = my_exchandler
+
+# # # Error Handler # # #
+
 # # # Config part # # #
 
 # find XDG config directory from environment variable. otherwise, return current user's home directory plus /.config
@@ -44,6 +68,17 @@ else:
     exit()
     
 # # # Config part # # #
+
+# # # currency # # #
+
+currencyfile = open('./currency.json', 'r+')
+amounts = json.load(currencyfile)
+currencyfile.close()
+currencyfile = open('./currency.json', 'w+')
+print(amounts)
+# json.dump(amounts, currencyfile)
+# amounts = {"i":"i"}
+# # # currency # # # 
 
 # # # Dynamic loading part # # #
 
