@@ -1,0 +1,7 @@
+{
+    "testitem":
+    {
+	"friendlyname": "Test Item",
+        "description": "A simple, nonfunctional item made for testing the shop system."
+    }
+}

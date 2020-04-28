@@ -1,6 +1,9 @@
-@bot.command(brief='Buy something will ya', pass_ctx=True)
-async def buy(ctx, arg1, arg2):
-  if arg1 == 'testitem':
-    amounttoadd = int(items[str(ctx.message.author.id)]["quantity"]) + int(arg2)
-    items[str(ctx.message.author.id)]["quantity"] = str(amounttoadd)
-    await ctx.send('You bought ' + str(arg2) + ' testitem(s).')
+@bot.command()
+async def shop(ctx):
+  shopEmbed = discord.Embed(title="Shop", description="Buy something using `pr.buy ")
+
+  shopEmbed.set_author(name="PyRobot", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
+  # embed.add_field(name="Voice Latency", value=str(VoiceClient.latency))
+  shopEmbed.add_field(name="Text Latency", value=str(int(bot.latency * 1000)) + 'ms')
+
+  await ctx.send(embed=shopEmbed)
