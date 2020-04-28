@@ -7,7 +7,10 @@ async def fuckoff(ctx):
   embed.add_field(name="Fucking off...", value='<:hahayes:694385453624721438>')
 
   await ctx.send(embed=embed)
+  inventoryfile = open("./inventory.json", "r+")
   currencyfile = open("./currency.json", 'r+')
+  json.dump(items, inventoryfile)
   json.dump(amounts, currencyfile)
+  inventoryfile.close()
   currencyfile.close()
   exit(0)

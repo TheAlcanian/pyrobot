@@ -4,6 +4,10 @@ from discord import *
 from discord.ext import *
 from discord.ext.commands import Bot
 from urlgrabber import urlopen
+from discord.ext import commands
+#from commands import *
+bot = commands.Bot(command_prefix='pr.')
+
 
 # # # Error Handler # # #
 
@@ -57,10 +61,16 @@ else:
 
 # # # currency # # #
 
+inventoryfilefuckedover = 0
 currencyfile = open('./currency.json', 'r+')
+inventoryfile = open('./inventory.json', 'r+')
 amounts = json.load(currencyfile)
+items = json.load(inventoryfile)
 currencyfile.close()
+inventoryfile.close()
 currencyfile = open('./currency.json', 'w+')
+inventoryfile = open('./inventory.json', 'w+')
+print(items)
 print(amounts)
 # json.dump(amounts, currencyfile)
 # amounts = {"i":"i"}
@@ -81,8 +91,7 @@ async def setErrorEmbed(errorDescription):
   errorEmbed = discord.Embed(title="Error", description="Uh-oh! PyRobot encountered an error!", colour=discord.Colour(0xe04c4c))
   errorEmbed.set_author(name="PyRobot", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
   errorEmbed.add_field(name="Error Description", value=errorDescription)
-  
-  
+    
 # # # Functions # # #
 
 # # # Global code # # #
