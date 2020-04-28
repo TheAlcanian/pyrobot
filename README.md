@@ -9,3 +9,7 @@ shop system for that inventory system, also wip
 currency system, sorta wip
 
 random cat commands, smashing people's heads in with wooden boards, oh my
+
+
+
+<sup>made with emacs, the ech cat, the residents of the hackerden and incomprehensible amounts of coffee</sup>
