@@ -1,8 +1,8 @@
-from discord import Message as Message
+from discord import Message
 from array import array
 from discord import *
 import discord
-from discord import User as User
+from discord import User
 import subprocess
 from discord.ext.commands import Bot
 from discord.ext import commands
