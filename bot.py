@@ -1,22 +1,8 @@
-from discord import Message as Message
 from array import array
+import subprocess, os, re, json, pytz, sys, pycurl
 from discord import *
-import discord
-from discord import User as User
-import subprocess
-from discord.ext.commands import Bot
-from discord.ext import commands
 from discord.ext import *
-Client = discord.Client()
-client = discord.Client()
-bot = commands.Bot(command_prefix='pr.')
-import os
-import os.path
-import re
-import json
-import pytz
-import sys
-import pycurl
+from discord.ext.commands import Bot
 from urlgrabber import urlopen
 
 # # # Error Handler # # #
