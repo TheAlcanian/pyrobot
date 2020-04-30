@@ -28,6 +28,8 @@ async def gamble(ctx, arg):
     amounts[str(ctx.message.author.id)] = str(addamount)
     print(amounts)
     if gainedcurrency == 0:
+      amountlost = currentuseramount + int(arg)
+      amounts[str(ctx.message.author.id)] = int(amountlost)
       await ctx.send(embed=moneyLostEmbed)
     else:
       await ctx.send(embed=moneyGainedEmbed)

@@ -5,7 +5,7 @@ import random
 @bot.command()
 async def calculate(ctx, arg1, arg2, arg3):
   async def embedcalc(num1, modifier, num2):
-    responders = ['Spy', 'Sniper', 'Pyro', 'Heavy', 'Engineer', 'Soldier', 'Demoman', 'Scout', 'Medic', 'Jevil', 'TCG', 'CK', 'Double-T', 'ROFL', 'urnotzach']
+    responders = ['Spy', 'Sniper', 'Pyro', 'Heavy', 'Engineer', 'Soldier', 'Demoman', 'Scout', 'Medic']
 
     calculation = '0'
 
