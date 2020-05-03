@@ -68,10 +68,6 @@ amounts = json.load(currencyfile)
 items = json.load(inventoryfile)
 currencyfile.close()
 inventoryfile.close()
-currencyfile = open('./currency.json', 'w+')
-inventoryfile = open('./inventory.json', 'w+')
-print(items)
-print(amounts)
 # json.dump(amounts, currencyfile)
 # amounts = {"i":"i"}
 # # # currency # # # 

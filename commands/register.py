@@ -15,8 +15,10 @@ async def register(ctx):
 
   id = ctx.message.author.id
   if str(id) not in amounts:
+    currencyfile = open('./currency.json', 'w+')
     amounts[id] = '100'
     json.dump(amounts, currencyfile)
     await ctx.send(embed=successEmbed)
+    currencyfile.close()
   else:
     await ctx.send(embed=failiureEmbed)
