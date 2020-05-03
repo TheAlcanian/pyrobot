@@ -11,10 +11,9 @@ async def fuckoff(ctx):
     await ctx.send(embed=embed)
 
  # inventoryfile.close()
- # currencyfile.close()
-
-    inventoryfile = open("./inventory.json", "w+")
-    currencyfile = open("./currency.json", 'w+')
+ # currencyfile.
+    inventoryfile = open("./inventory.json", "w")
+    currencyfile = open("./currency.json", 'w')
     json.dump(items, inventoryfile)
     json.dump(amounts, currencyfile)
     inventoryfile.close()
