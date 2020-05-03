@@ -61,13 +61,13 @@ else:
 
 # # # currency # # #
 
-inventoryfilefuckedover = 0
-currencyfile = open('./currency.json', 'r+')
-inventoryfile = open('./inventory.json', 'r+')
-amounts = json.load(currencyfile)
-items = json.load(inventoryfile)
-currencyfile.close()
-inventoryfile.close()
+#inventoryfilefuckedover = 0
+#currencyfile = open('./currency.json', 'r')
+#inventoryfile = open('./inventory.json', 'r')
+#amounts = json.load(currencyfile)
+#items = json.load(inventoryfile)
+#currencyfile.close()
+#inventoryfile.close()
 # json.dump(amounts, currencyfile)
 # amounts = {"i":"i"}
 # # # currency # # # 

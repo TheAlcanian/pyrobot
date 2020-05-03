@@ -12,12 +12,12 @@ async def fuckoff(ctx):
 
  # inventoryfile.close()
  # currencyfile.
-    inventoryfile = open("./inventory.json", "w")
-    currencyfile = open("./currency.json", 'w')
-    json.dump(items, inventoryfile)
-    json.dump(amounts, currencyfile)
-    inventoryfile.close()
-    currencyfile.close()
+#    inventoryfile = open("./inventory.json", "w")
+#    currencyfile = open("./currency.json", 'w')
+#    json.dump(items, inventoryfile)
+#    json.dump(amounts, currencyfile)
+#    inventoryfile.close()
+#    currencyfile.close()
     exit(0)
   else:
     embed = discord.Embed(title="Shutdown", description="Being the being of begone-ing")

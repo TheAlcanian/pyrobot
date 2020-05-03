@@ -14,11 +14,22 @@ async def register(ctx):
   failiureEmbed.add_field(name="Failiure...", value='You already have an account!')
 
   id = ctx.message.author.id
+  currencyfile = open('./currency.json', 'r+')
+  amounts = json.load(currencyfile)
+  currencyfile.close()
   if str(id) not in amounts:
     currencyfile = open('./currency.json', 'w+')
-    amounts[id] = '100'
+    print(amounts)
+    amounts[id] = str("100")
     json.dump(amounts, currencyfile)
     await ctx.send(embed=successEmbed)
     currencyfile.close()
+
+    #debugging
+    currencyfile = open('./currency.json', 'r')
+    currencyfile.read()
+    currencyfile.close()
   else:
+    print(amounts)
     await ctx.send(embed=failiureEmbed)
+    currencyfile.close()
