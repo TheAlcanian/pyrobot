@@ -2,6 +2,8 @@
 
 [![made-with-emacs](https://img.shields.io/badge/made%20with-emacs-993399.svg)](https://www.gnu.org/software/emacs/) ![contributors](https://img.shields.io/github/contributors/TheAlcanian/pyrobot?color=22BB22) ![closed-issues](https://img.shields.io/github/issues-closed-raw/TheAlcanian/pyrobot?color=00aa00) ![open-issues](https://img.shields.io/github/issues-raw/TheAlcanian/pyrobot?color=dd0000)
  
+ ![stars](https://img.shields.io/github/stars/TheAlcanian/pyrobot) ![watchers](https://img.shields.io/github/watchers/TheAlcanian/pyrobot) ![forks](https://img.shields.io/github/forks/TheAlcanian/pyrobot)
+ 
 ass code bad bot overall terrible
 
 inventory system thats wip
