@@ -4,13 +4,17 @@ async def gamble(ctx, arg):
   badArgEmbed = discord.Embed(title="Gambling", description="That isn't a number!")
   badArgEmbed.set_author(name="PyRobot", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
   
-  if str.isdigit(arg):
+  if str.isdigit(arg) or str(arg) == "all":
     currencyfile = open('./currency.json', 'r')
     amounts = json.load(currencyfile)
     currencyfile.close()
-    integerargument = int(arg)
+    if str(arg) == "all":
+      integerargument = int(amounts[str(ctx.message.author.id)])
+    else:
+      integerargument = int(arg)
+    
     if random.randint(1, 2) == 2:
-      gainedcurrency = int(arg) * 2
+      gainedcurrency = integerargument * 2
     else:
       gainedcurrency = 0
 
@@ -29,14 +33,14 @@ async def gamble(ctx, arg):
 
     #if user doesnt have enough pyrolls to fufill the requirement for the bet they chose then ignore it and tell them they dont have enough
     currentuseramount = int(amounts[str(ctx.message.author.id)])
-    if int(currentuseramount) <= int(int(arg) - 1):
+    if int(currentuseramount) <= int(integerargument - 1):
       await ctx.send(embed=noMoneyEmbed)
       return
 
     #debugging
     print(integerargument)
     
-    amountlost = currentuseramount - int(arg)
+    amountlost = currentuseramount - integerargument
     amounts[str(ctx.message.author.id)] = int(amountlost)
     addamount = int(amounts[str(ctx.message.author.id)]) + gainedcurrency
     amounts[str(ctx.message.author.id)] = str(addamount)
@@ -45,7 +49,7 @@ async def gamble(ctx, arg):
     currencyfile.close()
     print(amounts)
     if gainedcurrency == 0:
-      amountlost = currentuseramount - int(arg)
+      amountlost = currentuseramount - integerargument
       amounts[str(ctx.message.author.id)] = int(amountlost)
       currencyfile = open('./currency.json', 'w')
       json.dump(amounts, currencyfile)

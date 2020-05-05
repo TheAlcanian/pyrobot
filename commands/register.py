@@ -20,6 +20,7 @@ async def register(ctx):
   if str(id) not in amounts:
     currencyfile = open('./currency.json', 'w+')
     print(amounts)
+    print('STHAP')
     amounts[id] = str("100")
     json.dump(amounts, currencyfile)
     await ctx.send(embed=successEmbed)
