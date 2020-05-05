@@ -1,7 +1,44 @@
 {
     "testitem":
     {
+        "actualname": "testitem",
 	"friendlyname": "Test Item",
-        "description": "A simple, nonfunctional item made for testing the shop system."
+        "description": "A simple, nonfunctional item made for testing the shop system.",
+        "cost": "100"
+    },
+    "chillpill":
+    {
+	"actualname": "chillpill",
+	"friendlyname": "Chill Pill",
+	"description": "Take a Chill Pill!",
+	"cost": "1200"
+    },
+    "chillpill2":
+    {
+	"actualname": "chillpill2",
+	"friendlyname": "Chill Pill",
+	"description": "Take a Chill Pill!",
+	"cost": "1200"
+    },
+    "chillpill3":
+    {
+	"actualname": "chillpill3",
+	"friendlyname": "Chill Pill",
+	"description": "Take a Chill Pill!",
+	"cost": "1200"
+    },
+    "chillpill4":
+    {
+	"actualname": "chillpill4",
+	"friendlyname": "Chill Pill",
+	"description": "Take a Chill Pill!",
+	"cost": "1200"
+    },
+    "chillpill5":
+    {
+	"actualname": "chillpill5",
+	"friendlyname": "Chill Pill",
+	"description": "Take a Chill Pill!",
+	"cost": "1200"
     }
 }
