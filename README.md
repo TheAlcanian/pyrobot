@@ -7,8 +7,10 @@
 ass code bad bot overall terrible
 
 inventory system thats wip
+
 shop system for that inventory system, also wip
-currency system, sorta wip
+
+currency system, p much complete
 
 random cat commands, smashing people's heads in with wooden boards, oh my
 
