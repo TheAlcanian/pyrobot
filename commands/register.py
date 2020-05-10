@@ -14,8 +14,11 @@ async def register(ctx):
   failiureEmbed.add_field(name="Failiure...", value='You already have an account!')
 
   id = ctx.message.author.id
+  inventoryfile = open('./inventory.json', 'r+')
   currencyfile = open('./currency.json', 'r+')
   amounts = json.load(currencyfile)
+  items = json.load(inventoryfile)
+  inventoryfile.close()
   currencyfile.close()
   if str(id) not in amounts:
     currencyfile = open('./currency.json', 'w+')
@@ -25,12 +28,15 @@ async def register(ctx):
     json.dump(amounts, currencyfile)
     await ctx.send(embed=successEmbed)
     currencyfile.close()
+  if str(id) not in items:
+    inventoryfile = open('./inventory.json', 'w+')
+    items[id] = ['item', 'item2']
+    json.dump(items, inventoryfile)
+    await ctx.send(embed=successEmbed)
 
-    #debugging
-    currencyfile = open('./currency.json', 'r')
-    currencyfile.read()
-    currencyfile.close()
   else:
-    print(amounts)
-    await ctx.send(embed=failiureEmbed)
-    currencyfile.close()
+    if str(id) not in amounts or items:
+      print(amounts)
+      await ctx.send(embed=failiureEmbed)
+      currencyfile.close()
+      inventoryfile.close()
