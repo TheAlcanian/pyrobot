@@ -1,4 +1,5 @@
-from array import array
+#we probably dont need this lol
+#from array import array
 import subprocess, os, re, json, pytz, sys, pycurl
 from discord import *
 from discord.ext import *
@@ -12,23 +13,12 @@ bot = commands.Bot(command_prefix='pr.')
 # # # Error Handler # # #
 
 def my_exchandler(type, value, traceback):
-  if type == RuntimeError:
-    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
-    json.dump(amounts, currencyfile)
-    currencyfile.close()
-    exit(0)
-  if type == KeyboardInterrupt:
-    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
-    json.dump(amounts, currencyfile)
-    currencyfile.close()
-    exit(0)
-  if type == SystemExit:
+  if type == RuntimeError or KeyboardInterrupt or SystemExit:
     print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
     json.dump(amounts, currencyfile)
     currencyfile.close()
     exit(0)
   sys.__excepthook__(type, value, traceback)
-print("[SR] Loading error handler...")
 sys.excepthook = my_exchandler
 
 # # # Error Handler # # #
@@ -59,34 +49,26 @@ else:
     
 # # # Config part # # #
 
-# # # currency # # #
-
-#inventoryfilefuckedover = 0
-#currencyfile = open('./currency.json', 'r')
-#inventoryfile = open('./inventory.json', 'r')
-#amounts = json.load(currencyfile)
-#items = json.load(inventoryfile)
-#currencyfile.close()
-#inventoryfile.close()
-# json.dump(amounts, currencyfile)
-# amounts = {"i":"i"}
-# # # currency # # # 
-
 # # # Dynamic loading part # # #
 
+# define the command directory as the commands variable
 commands = os.listdir('./commands/')
+# iterate over every command in the command directory
 for command in commands:
+  # run command file
   exec(open('./commands/' + command).read())
+  # print a message which breaks for some reason i need to get on fixing that
   print('[PR] Loaded command ' + str(command).rstrip('.py') + ' from file ' + command + '.')
 
 # # # Dynamic loading part # # #
 
 # # # Functions # # #
 
-async def setErrorEmbed(errorDescription):
-  errorEmbed = discord.Embed(title="Error", description="Uh-oh! PyRobot encountered an error!", colour=discord.Colour(0xe04c4c))
-  errorEmbed.set_author(name="PyRobot", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
-  errorEmbed.add_field(name="Error Description", value=errorDescription)
+# isnt used
+#async def setErrorEmbed(errorDescription):
+#  errorEmbed = discord.Embed(title="Error", description="Uh-oh! PyRobot encountered an error!", colour=discord.Colour(0xe04c4c))
+#  errorEmbed.set_author(name="PyRobot", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be0#3dc7ac21f337884fbbe4516de.webp")
+#  errorEmbed.add_field(name="Error Description", value=errorDescription)
     
 # # # Functions # # #
 
@@ -94,8 +76,10 @@ async def setErrorEmbed(errorDescription):
 
 # # # Global code # # #
 
+# when bot is ready, print a message
 @bot.event
 async def on_ready():
   print('[PR] PyRobot logging in as {0.user}'.format(bot))
-      
+
+# log in as bot account defined by token in config file
 bot.run(data["token"])      
