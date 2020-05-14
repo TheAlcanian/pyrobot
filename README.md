@@ -28,6 +28,8 @@ fill it with this:
     "token":"<bot account token here>"
 }
 ```
+create `<pyrobot's install dir>/currency.json` and `<pyrobot's install dir>/inventory.json`
+fill those files with any dummy data so that the commands dont complain, personally i use `{"e":"e"}`
 
 install [these fortunes](https://github.com/ncdulo/fortune-mod-mythical-linux) (or dont, but remember to disable the pr.fortune command, or modify it to your liking. pr.fortune doesnt work on windon't systems)
 
