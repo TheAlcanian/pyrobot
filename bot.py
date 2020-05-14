@@ -12,14 +12,12 @@ bot = commands.Bot(command_prefix='pr.')
 
 # # # Error Handler # # #
 
-def my_exchandler(type, value, traceback):
-  if type == RuntimeError or KeyboardInterrupt or SystemExit:
-    print("\n[SR] Recieved keyboard interrupt. Dumping currency and quitting...")
-    json.dump(amounts, currencyfile)
-    currencyfile.close()
-    exit(0)
-  sys.__excepthook__(type, value, traceback)
-sys.excepthook = my_exchandler
+#def my_exchandler(type, value, traceback):
+#  if type == RuntimeError or KeyboardInterrupt or SystemExit:
+#    print("\n[SR] Recieved keyboard interrupt. Quitting...")
+#    exit(0)
+#  sys.__excepthook__(type, value, traceback)
+#sys.excepthook = my_exchandler
 
 # # # Error Handler # # #
 
