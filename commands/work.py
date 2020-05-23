@@ -7,7 +7,7 @@ async def work(ctx):
     currencyfile = open("./currency.json", 'r+')
     amounts = json.load(currencyfile)
     currencyfile.close()
-    currencyfile = open("./currency.json", 'w+')
+    currencyfile = open("./currency.json", 'w')
     gainedcurrency = str(random.randint(100, 150))
 
     # we have to stick the embeds here because of how they're structured

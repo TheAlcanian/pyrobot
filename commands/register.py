@@ -17,8 +17,8 @@ async def register(ctx):
   # shorthand for user's id
   id = ctx.message.author.id
   # open both inventory file and currency file, put the JSON data in a var, then close both
-  inventoryfile = open('./inventory.json', 'r+')
-  currencyfile = open('./currency.json', 'r+')
+  inventoryfile = open('./inventory.json', 'r')
+  currencyfile = open('./currency.json', 'r')
   amounts = json.load(currencyfile)
   items = json.load(inventoryfile)
   inventoryfile.close()
@@ -26,7 +26,7 @@ async def register(ctx):
   # if the user is not in the currency file
   if str(id) not in amounts:
     # open currency file as overwrite with updating
-    currencyfile = open('./currency.json', 'w+')
+    currencyfile = open('./currency.json', 'w')
     # debugging
     print(amounts)
     print('STHAP')
@@ -41,7 +41,7 @@ async def register(ctx):
   # if the user is not in the inventory file
   if str(id) not in items:
     # open inventory file as overwrite with updating
-    inventoryfile = open('./inventory.json', 'w+')
+    inventoryfile = open('./inventory.json', 'w')
     # give them some test items to start (they dont exist in inventory.json yet)
     items[id] = ['item', 'item2']
     # dump the items var to the inventory file
