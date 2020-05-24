@@ -6,7 +6,8 @@
  
 An open-source general purpose bot with reverse image searching, a currency system, timezone conversion and a little more.
 
-How to host your own
+# How to host your own
+
 Instructions:
 ~~install everything on pypi~~
 
