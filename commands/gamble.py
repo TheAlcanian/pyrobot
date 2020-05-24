@@ -47,6 +47,7 @@ async def gamble(ctx, arg):
         return 
 
     #debugging
+      print(gainedcurrency)
       print(integerargument)
 
      #SPAGHETTI. i cant be bothered to comment this

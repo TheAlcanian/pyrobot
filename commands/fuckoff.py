@@ -7,7 +7,7 @@ async def fuckoff(ctx):
 
     embed.set_author(name="PyRobot", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
     # embed.add_field(name="Voice Latency", value=str(VoiceClient.latency))
-    embed.add_field(name="Fucking off...", value='<:hahayes:694385453624721438>')
+    embed.add_field(name="Fucking off...", value='<:hahayes:707028764156100728>')
 
     # send embed
     await ctx.send(embed=embed)
