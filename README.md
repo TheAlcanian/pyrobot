@@ -20,11 +20,10 @@ Fill it with your token:
 ```
 {
     "token": "<bot account token here>",
+    "saucenao_api_key": "<either a SauceNAO API Key or absolutely nothing, not even a space.>",
     "saucenao_search_enabled": "<either one of true or false. this is so the bot doesnt post porn accidentially>"
 }
 ```
-Optionally you can also add
-`"saucenao_api_key": "<saucenao api key here, leave blank if you want. not having it will impose more restrictions on saucenao searches>"`
 
 Create `<pyrobot's install dir>/currency.json` and `<pyrobot's install dir>/inventory.json`
 
