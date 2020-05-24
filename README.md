@@ -4,35 +4,32 @@
  
  ![stars](https://img.shields.io/github/stars/TheAlcanian/pyrobot) ![watchers](https://img.shields.io/github/watchers/TheAlcanian/pyrobot) ![forks](https://img.shields.io/github/forks/TheAlcanian/pyrobot)
  
-ass code bad bot overall terrible
+An open-source general purpose bot with reverse image searching, a currency system, timezone conversion and a little more.
 
-inventory system thats wip
-
-shop system for that inventory system, also wip
-
-currency system, p much complete
-
-random cat commands, smashing people's heads in with wooden boards, oh my
-
-instructions:
+How to host your own
+Instructions:
 ~~install everything on pypi~~
 
-install `discord.py`, `urlgrabber` (i think), `pycurl` (probs dep for urlgrabber) and `pytz`
+Install `discord.py`, `urlgrabber` (i think), `pycurl` (probs dep for urlgrabber), `pytz` and `saucenao_api`
 
 create `$XDG_CONFIG_HOME/pyrobot/config.json` (if you don't have a config_home it'll read from ~/.config)
 
-fill it with this:
+Fill it with your token:
 
 ```
 {
-    "token":"<bot account token here>"
+    "token": "<bot account token here>"
 }
 ```
-create `<pyrobot's install dir>/currency.json` and `<pyrobot's install dir>/inventory.json`
-fill those files with any dummy data so that the commands dont complain, personally i use `{"e":"e"}`
+Optionally you can also add
+`"saucenao_api_key": "<saucenao api key here, leave blank if you want. not having it will impose more restrictions on saucenao searches>"`
 
-install [these fortunes](https://github.com/ncdulo/fortune-mod-mythical-linux) (or dont, but remember to disable the pr.fortune command, or modify it to your liking. pr.fortune doesnt work on windon't systems)
+Create `<pyrobot's install dir>/currency.json` and `<pyrobot's install dir>/inventory.json`
 
-realise that i am not responsible for any shit that happens to your computer, check all the code you run, yada yada
+Fill those files with any dummy data so that the commands don't complain, personally I use `{"e": "e"}`.
 
-<sup>made with emacs, the ech cat, the residents of the hackerden and incomprehensible amounts of coffee</sup>
+Install [these fortunes](https://github.com/ncdulo/fortune-mod-mythical-linux) (or don't, but remember to disable the pr.fortune command, or modify it to your liking. pr.fortune doesn't work on Windows systems.)
+
+Realise that i am not responsible for any shit that happens to your computer, check all the code you run, yada yada.
+
+<sup>Made with emacs, the ech cat, the residents of the hackerden and incomprehensible amounts of coffee</sup>
