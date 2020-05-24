@@ -19,7 +19,8 @@ Fill it with your token:
 
 ```
 {
-    "token": "<bot account token here>"
+    "token": "<bot account token here>",
+    "saucenao_search_enabled": "<either one of true or false. this is so the bot doesnt post porn accidentially>"
 }
 ```
 Optionally you can also add
