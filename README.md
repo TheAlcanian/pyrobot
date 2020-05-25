@@ -15,7 +15,7 @@ Install `discord.py`, `urlgrabber` (i think), `pycurl` (probs dep for urlgrabber
 
 create `$XDG_CONFIG_HOME/pyrobot/config.json` (if you don't have a config_home it'll read from ~/.config)
 
-Fill it with your token:
+Fill it with the following info:
 
 ```
 {
