@@ -22,7 +22,7 @@ Fill it with the following info:
     "token": "<bot account token here>",
     "saucenao_api_key": "<either a SauceNAO API Key or absolutely nothing, not even a space.>",
     "saucenao_search_enabled": "<either one of true or false. this is so the bot doesnt post porn accidentially>",
-	"github_api_access_token": "<github api access token, make one at https://github.com/settings/tokens or disable pr.github>"
+    "github_api_access_token": "<github api access token, make one at https://github.com/settings/tokens or disable pr.github>"
 }
 ```
 
