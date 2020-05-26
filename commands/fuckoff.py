@@ -21,6 +21,7 @@ async def fuckoff(ctx):
 #    inventoryfile.close()
 #    currencyfile.close()
     # die
+    await bot.change_presence(status=discord.Status.offline)
     exit(0)
   # if the bot owner is not the person running the command
   else:

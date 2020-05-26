@@ -6,5 +6,6 @@ async def balance(ctx):
   currencyfile.close()
   # success embed
   successEmbed = discord.Embed(title="PyRoll Bank", description="You have " + str(amounts[str(ctx.message.author.id)]) + " PyRolls!")
+  successEmbed.set_author(name="PyRobot", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be03dc7ac21f337884fbbe4516de.webp")
   # send success embed
   await ctx.send(embed=successEmbed)

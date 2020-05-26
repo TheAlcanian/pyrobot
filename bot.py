@@ -1,25 +1,11 @@
-#we probably dont need this lol
-#from array import array
 import subprocess, os, re, json, pytz, sys, pycurl
+from github import Github
 from discord import *
 from discord.ext import *
 from discord.ext.commands import Bot
 from urlgrabber import urlopen
 from discord.ext import commands
-#from commands import *
 bot = commands.Bot(command_prefix='pr.')
-
-
-# # # Error Handler # # #
-
-#def my_exchandler(type, value, traceback):
-#  if type == RuntimeError or KeyboardInterrupt or SystemExit:
-#    print("\n[SR] Recieved keyboard interrupt. Quitting...")
-#    exit(0)
-#  sys.__excepthook__(type, value, traceback)
-#sys.excepthook = my_exchandler
-
-# # # Error Handler # # #
 
 # # # Config part # # #
 
@@ -55,24 +41,10 @@ commands = os.listdir('./commands/')
 for command in commands:
   # run command file
   exec(open('./commands/' + command).read())
-  # print a message which breaks for some reason i need to get on fixing that
-  print('[PR] Loaded command ' + str(command).rstrip('.py') + ' from file ' + command + '.')
+  # print a message for each command
+  print('[PR] Loaded command file ' + command + '.')
 
 # # # Dynamic loading part # # #
-
-# # # Functions # # #
-
-# isnt used
-#async def setErrorEmbed(errorDescription):
-#  errorEmbed = discord.Embed(title="Error", description="Uh-oh! PyRobot encountered an error!", colour=discord.Colour(0xe04c4c))
-#  errorEmbed.set_author(name="PyRobot", url="https://discordapp.com", icon_url="https://cdn.discordapp.com/avatars/503024140706643968/6b57be0#3dc7ac21f337884fbbe4516de.webp")
-#  errorEmbed.add_field(name="Error Description", value=errorDescription)
-    
-# # # Functions # # #
-
-# # # Global code # # #
-
-# # # Global code # # #
 
 # when bot is ready, print a message
 @bot.event
@@ -80,4 +52,5 @@ async def on_ready():
   print('[PR] PyRobot logging in as {0.user}'.format(bot))
 
 # log in as bot account defined by token in config file
+#await bot.change_presence(status=discord.Status.online)
 bot.run(data["token"])      
