@@ -11,7 +11,7 @@ An open-source general purpose bot with reverse image searching, a currency syst
 Instructions:
 ~~install everything on pypi~~
 
-Install `discord.py`, `urlgrabber` (i think), `pycurl` (probs dep for urlgrabber), `pytz` and `saucenao_api`
+Install `discord.py`, `urlgrabber`, `pytz`, `saucenao_api` and `PyGithub`
 
 create `$XDG_CONFIG_HOME/pyrobot/config.json` (if you don't have a config_home it'll read from ~/.config)
 
