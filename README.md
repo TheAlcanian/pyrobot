@@ -4,6 +4,8 @@
  
  ![stars](https://img.shields.io/github/stars/TheAlcanian/pyrobot) ![watchers](https://img.shields.io/github/watchers/TheAlcanian/pyrobot) ![forks](https://img.shields.io/github/forks/TheAlcanian/pyrobot)
  
+ ![lines of code](https://tokei.rs/b1/github/TheAlcanian/pyrobot?category=code)`
+ 
 An open-source general purpose bot with reverse image searching, a currency system, timezone conversion and a little more.
 
 # How to host your own
