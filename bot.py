@@ -1,4 +1,4 @@
-import subprocess, os, re, json, pytz, sys, pycurl
+import subprocess, os, re, json, pytz, sys, pycurl, dbm.gnu
 from github import Github
 from discord import *
 from discord.ext import *
@@ -40,11 +40,24 @@ commands = os.listdir('./commands/')
 # iterate over every command in the command directory
 for command in commands:
   # run command file
-  exec(open('./commands/' + command).read())
+    exec(open('./commands/' + command).read())
   # print a message for each command
-  print('[PR] Loaded command file ' + command + '.')
+    print('[PR] Loaded command file ' + command + '.')
 
 # # # Dynamic loading part # # #
+
+# # # Functions # # #
+
+def database_write(database, user_id, data):
+    with dbm.gnu.open(database, 'c') as db:
+        db[user_id] = data
+
+def database_read(database, user_id):
+    with dbm.gnu.open(database, 'r') as db:
+        print(db.get(user_id, 'Requested field ' + user_id + ' does not exist!'))
+
+# # # Functions # # #
+
 
 # when bot is ready, print a message
 @bot.event

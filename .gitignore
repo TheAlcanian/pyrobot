@@ -1,6 +1,15 @@
-currency.json
-disabled/
+# inventory data file, contains users inventory data
 inventory.json
+
+# currency data file, contains users currency data
+currency.json
+
+# most recent error from error generator
 lasterror.png
+
+# currency and inventory databases, new thing which im gonna use to get rid of JSON memes
+currency.dbm
+inventory.dbm
+
 # dont ask why i put this here it is a very good reason
 shardiechgreentext
