@@ -11,13 +11,13 @@ async def gamble(ctx, arg):
   try:
     if str.isdigit(arg) or str(arg) == "all":
      # open the currency file, get the JSON data from it, and close the currency file
-      currencyfile = open('./currency.json', 'r')
-      amounts = json.load(currencyfile)
-      currencyfile.close()
+      #currencyfile = open('./currency.json', 'r')
+      #amounts = json.load(currencyfile)
+      #currencyfile.close()
      # is the argument passed the word all?
       if str(arg) == "all":
        # set the amount bet to everything the user has
-        integerargument = int(amounts[str(ctx.message.author.id)])
+        integerargument = int(str(database_read('currency.dbm', str(ctx.message.author.id))).strip("'"))
       else:
        # set the amount bet to the amount the user passed
         integerargument = int(arg)
@@ -41,7 +41,7 @@ async def gamble(ctx, arg):
 
 
      #if user doesnt have enough pyrolls to fufill the requirement for the bet they chose then ignore it and tell them they dont have enough
-      currentuseramount = int(amounts[str(ctx.message.author.id)])
+      currentuseramount = int(str(database_read('currency.dbm', str(ctx.message.author.id))).strip("'"))
       if int(currentuseramount) <= int(integerargument - 1):
         await ctx.send(embed=noMoneyEmbed)
         return 
@@ -55,25 +55,25 @@ async def gamble(ctx, arg):
      # amount lost is the current user's amount of pyrolls minus the amount of money they chose to bet
       amountlost = currentuseramount - integerargument
       # set user's balance to the amount of money lost. why does this work, i have no clue lol
-      amounts[str(ctx.message.author.id)] = int(amountlost)
+      database_write('currency.dbm', str(ctx.message.author.id), str(amountlost))
       # add amount is the user's current amount of pyrolls plus the amount of pyrolls they gained
-      addamount = int(amounts[str(ctx.message.author.id)]) + gainedcurrency
+      addamount = int(str(database_read('currency.dbm', str(ctx.message.author.id))).strip("'")) + gainedcurrency
       # set the user's amount of pyrolls to the amount of money gained
-      amounts[str(ctx.message.author.id)] = str(addamount)
+      database_write('currency.dbm', str(ctx.message.author.id), str(addamount))
       # open the currency file to write the value, then close it
-      currencyfile = open('./currency.json', 'w')
-      json.dump(amounts, currencyfile)
-      currencyfile.close()
+      #currencyfile = open('./currency.json', 'w')
+      #json.dump(amounts, currencyfile)
+      #currencyfile.close()
       # debugging
-      print(amounts)
+      print(int(str(database_read('currency.dbm', str(ctx.message.author.id))).strip("'")))
       # if the amount of currency the user gained was zero, set the amount of pyrolls they have to the amount lost
       if gainedcurrency == 0:
         amountlost = currentuseramount - integerargument
-        amounts[str(ctx.message.author.id)] = int(amountlost)
+        database_write('currency.dbm', str(ctx.message.author.id), str(amountlost))
         # open currency file to write to it again, then close it again
-        currencyfile = open('./currency.json', 'w')
-        json.dump(amounts, currencyfile)
-        currencyfile.close()
+        #currencyfile = open('./currency.json', 'w')
+        #json.dump(amounts, currencyfile)
+        #currencyfile.close()
         # send a special embed for losing money instead of gaining it
         await ctx.send(embed=moneyLostEmbed)
       else:

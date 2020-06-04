@@ -48,13 +48,14 @@ for command in commands:
 
 # # # Functions # # #
 
-def database_write(database, user_id, data):
+def database_write(database, user_id, value):
     with dbm.gnu.open(database, 'c') as db:
-        db[user_id] = data
+        db[user_id] = value
 
 def database_read(database, user_id):
     with dbm.gnu.open(database, 'r') as db:
-        print(db.get(user_id, 'Requested field ' + user_id + ' does not exist!'))
+        return str(db.get(user_id)).lstrip('b')
+        #print(db.get(user_id, 'Requested field ' + user_id + ' does not exist!'))
 
 # # # Functions # # #
 
